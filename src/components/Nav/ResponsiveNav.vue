@@ -1,0 +1,40 @@
+<template>
+    <div class="w-full h- relative z-50 flex justify-end items-center justify-end text-sm font-black font-medium mb-8 absolute pin-t pin-r z-50 h-16">
+        <img class="w-32 absolute pin-t pin-l mt-2 ml-2" src="../assets/OF_white-shadow.svg" alt="">
+        <nav-list :menuActive="menuActive"
+        ></nav-list>
+        <font-awesome-icon
+                class="nav-icon items-center justify-center mx-4 text-white flex md:hidden"
+                :class="menuActive ? 'active' : ''"
+                :icon="menuActive ? 'chevron-left' : 'bars'"
+                @click="toggleMenu"
+                size="2x"/>
+    </div>
+</template>
+
+<script>
+    import navList from '../components/Nav/NavList'
+
+    export default {
+        components: {
+            navList,
+        },
+        data() {
+            return {
+                menuActive: false
+            }
+        },
+        methods: {
+            toggleMenu() {
+                this.menuActive = !this.menuActive
+            }
+        }
+
+    }
+</script>
+
+<style lang="sass">
+    .nav-icon
+        -webkit-transition: all 0.3s
+        transition: all 0.3s
+</style>
