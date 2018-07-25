@@ -1,6 +1,6 @@
 <template>
-    <div class="w-full h- relative z-50 flex justify-end items-center justify-end text-sm font-black font-medium mb-8 absolute pin-t pin-r z-50 h-16">
-        <img class="w-32 absolute pin-t pin-l mt-2 ml-2" src="../assets/OF_white-shadow.svg" alt="">
+    <div class="w-full relative z-50 flex justify-end items-center justify-end text-sm font-black font-medium mb-8 absolute pin-t pin-r z-50 h-16">
+        <img class="w-32 absolute pin-t pin-l mt-2 ml-2" src="@/assets/OF_white-shadow.svg" alt="">
         <nav-list :menuActive="menuActive"
         ></nav-list>
         <font-awesome-icon
@@ -13,7 +13,7 @@
 </template>
 
 <script>
-    import navList from '../components/Nav/NavList'
+    import navList from './NavList'
 
     export default {
         components: {
@@ -27,8 +27,20 @@
         methods: {
             toggleMenu() {
                 this.menuActive = !this.menuActive
-            }
-        }
+            },
+            catchScroll() {
+                 if (window.pageYOffset > 10) {
+                     this.menuActive = false
+                 }
+            },
+        },
+        mounted() {
+            window.addEventListener('scroll', this.catchScroll)
+        },
+        destroyed() {
+            window.removeEventListener('scroll', this.catchScroll)
+        },
+
 
     }
 </script>

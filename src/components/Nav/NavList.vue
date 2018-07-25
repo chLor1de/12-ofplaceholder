@@ -1,12 +1,10 @@
 <template>
-    <ul class="flex flex-col md:flex-row  list-reset"
+    <ul class="flex flex-col md:flex-row list-reset"
         :class="[menuActive ? 'pin-l, activeleft' : '', responsiveUl]">
-
-        <li class="uppercase tracking-wide
-        text-base mx-8 no-underline text-white cursor-pointer hover:shadow-lg
-        my-6 md:my-0"
+        <li class="uppercase tracking-wide text-base mx-8 no-underline text-white
+                   cursor-pointer hover:shadow-lg my-6 md:my-0"
             v-for="(link, label) in list">
-            <a class="font-bold">{{ label }}</a>
+            <span class="font-bold" :v-scroll-to="{el:select}">{{ label }}{{ link }}</span>
         </li>
     </ul>
 </template>
@@ -16,6 +14,7 @@
         props: ['menuActive'],
         data() {
             return {
+                select: '.vednok',
                 responsiveUl: [
                     'bg-red',
                     'md:bg-transparent',
@@ -28,13 +27,13 @@
                     'h-screen',
                     'md:h-auto',
                     'md:w-full',
-                    'w-4/5',
+                    'fixed',
                 ],
                 list: {
-                    'Védnök': '#',
-                    'Galéria': '#',
-                    'Támogatók': '#',
-                    'Kapcsolat': '#',
+                    'Országfutás': 'orszagfutas',
+                    'Védnök': '.vednok',
+                    'Támogatók': '.sponsor',
+                    'Kapcsolat': '.contact',
                 },
             }
         }

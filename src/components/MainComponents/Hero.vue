@@ -3,7 +3,7 @@
         <responsive-nav></responsive-nav>
 
         <div class="w-full absolute h-full wrapper overflow-hidden flex">
-            <img class="h-full w-full runner z-10 self-end absoulte pin" src="../assets/alex.jpg" alt="">
+            <img class="h-full w-full runner z-10 self-end absoulte pin" src="../../assets/alex.jpg" alt="">
             <div class="after absolute bg-red z-20 pin"></div>
         </div>
 
@@ -18,7 +18,7 @@
 </template>
 
 <script>
-    import responsiveNav from '../components/ResponsiveNav'
+    import responsiveNav from '../Nav/ResponsiveNav'
 
     export default {
         components: {
