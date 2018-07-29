@@ -5,8 +5,8 @@
                 <img class="w-full" src="@/assets/lubics.jpg" alt="">
             </div>
             <div class="flex justify-center items-start flex-col lg:w-2/3 w-full text-white p-4">
-                <h1 class="md:text-xl text-lg uppercase vednok">Köszöntelek Benneteket a 8. Országfutás honlapján!</h1>
-                <div class="text-sm lg:text-m text-justify mt-4 leading-normal">
+                <h1 class="md:text-xl text-lg uppercase mt-4" id="vednok">Köszöntelek Benneteket a 8. Országfutás honlapján!</h1>
+                <div class="text-sm lg:text-m text-justify leading-normal">
                     <p>Nagyon megtisztelőnek érzem, hogy immáron harmadszor is az esemény védnöke lehetek, hiszen magam
                         is részt vettem az eddigi összes Országfutáson. Gondolom a hetedik szervezés után már nem is
                         igazán kell elmondanom, miről is szól ez az esemény, de engedjétek meg, hogy néhány mondatban

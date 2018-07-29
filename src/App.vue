@@ -4,6 +4,7 @@
         <general></general>
         <info-graph></info-graph>
         <patron></patron>
+        <motivation></motivation>
         <sponsor></sponsor>
         <app-footer></app-footer>
         <top-button></top-button>
@@ -18,6 +19,7 @@
     import sponsor from './components/MainComponents/Sponsor'
     import patron from './components/MainComponents/Patron'
     import topButton from './components/MainComponents/TopButton'
+    import motivation from './components/MainComponents/Motivation'
     export default {
         name: 'app',
         components: {
@@ -27,7 +29,8 @@
             appFooter,
             patron,
             topButton,
-            sponsor
+            sponsor,
+            motivation
         }
     }
 </script>

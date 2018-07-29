@@ -1,10 +1,10 @@
 <template>
     <div class="w-full relative z-50 flex justify-end items-center justify-end text-sm font-black font-medium mb-8 absolute pin-t pin-r z-50 h-16">
-        <img class="w-32 absolute pin-t pin-l mt-2 ml-2" src="@/assets/OF_white-shadow.svg" alt="">
+        <img class="w-16 md:w-20 absolute pin-t pin-l mt-2 ml-4" src="@/assets/OF_red.svg" alt="">
         <nav-list :menuActive="menuActive"
         ></nav-list>
         <font-awesome-icon
-                class="nav-icon items-center justify-center mx-4 text-white flex md:hidden"
+                class="nav-icon items-center justify-center mx-4 text-white flex lg:hidden"
                 :class="menuActive ? 'active' : ''"
                 :icon="menuActive ? 'chevron-left' : 'bars'"
                 @click="toggleMenu"

@@ -1,27 +1,52 @@
 <template>
-    <div class="bg-white w-full">
-        <div class="mx-auto flex flex-col">
-            <div class="xl:w-4/5 w-full h-64 flex-wrap bg-grey relative self-start items-center justify-center flex xl:rounded-r-full rounded-r-none  my-12">
-                <div class="absolute pin-l bg-green py-6 pl-20 pr-12 rounded-r-full heading">
-                    <h1 class="md:text-xl text-white font-medium text-lg uppercase ">
-                        Támogatóink</h1>
-                </div>
-                <img class="w-64 mx-6" src="@/assets/unnamed.png" alt="">
-                <img class="w-48 mx-6" src="@/assets/magyar_ketsoros_feher.jpg" alt="">
-                <img class="w-64 mx-6" src="@/assets/unnamed-2.png" alt="">
-                <img class="w-64 mx-6" src="@/assets/2g.png" alt="">
+    <div class="bg-white w-full my-12">
+        <div class="container mx-auto">
+            <h1 id="sponsor" class="uppercase text-left text-center md:text-xl text-lg mb-4">Támogatóink</h1>
+            <div class="flex justify-center items-center flex-wrap">
+                <img @click="clicked('https://lathatatlan.hu')"
+                        @mouseover="onHover($event)" @mouseleave="onLeave($event)" class="h-24 m-2 md:m-6 cursor-pointer"
+                     src="@/assets/magyar_ketsoros_feher.jpg" alt="">
+                <img @click="clicked('https://visualz.hu')"
+                        @mouseover="onHover($event)" @mouseleave="onLeave($event)" class="h-24 m-2 md:m-6 cursor-pointer"
+                     src="@/assets/unnamed-2.png" alt="">
+                <img @click="clicked('http://mozduljerte.hu')"
+                        @mouseover="onHover($event)" @mouseleave="onLeave($event)" class="h-24 m-2 md:m-6 cursor-pointer"
+                     src="@/assets/2g.png" alt="">
+                <img @click="clicked('https://runcard.eu')"
+                        @mouseover="onHover($event)" @mouseleave="onLeave($event)" class="h-24 m-2 md:m-6 cursor-pointer"
+                     src="@/assets/unnamed.png" alt="">
             </div>
         </div>
     </div>
 </template>
 
 <script>
-    export default {}
+    export default {
+        methods: {
+            onHover(e) {
+                e.target.classList.add("hover");
+            },
+            onLeave(e) {
+                e.target.classList.remove('hover');
+            },
+            clicked(link) {
+                window.open(link, '_blank').focus();
+            }
+        }
+    }
 </script>
 
 <style lang="scss" scoped>
     .heading {
         top: -2rem;
+    }
+
+    img {
+        filter: grayscale(100%);
+    }
+
+    img.hover {
+        filter: grayscale(0%);
     }
 
 </style>

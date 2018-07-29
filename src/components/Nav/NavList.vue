@@ -1,10 +1,10 @@
 <template>
-    <ul class="flex flex-col md:flex-row list-reset"
+    <ul class="flex flex-col lg:flex-row list-reset w-1/2"
         :class="[menuActive ? 'pin-l, activeleft' : '', responsiveUl]">
-        <li class="uppercase tracking-wide text-base mx-8 no-underline text-white
-                   cursor-pointer hover:shadow-lg my-6 md:my-0"
+        <li class="uppercase tracking-wide xl:text-base lg:mx-2 text-sm xl:mx-4 no-underline text-white
+                   cursor-pointer hover:shadow-lg my-6 lg:my-0"
             v-for="(link, label) in list">
-            <span class="font-bold" :v-scroll-to="{el:select}">{{ label }}{{ link }}</span>
+            <a :href="link" class="font-bold no-underline text-white">{{ label }}</a>
         </li>
     </ul>
 </template>
@@ -14,26 +14,26 @@
         props: ['menuActive'],
         data() {
             return {
-                select: '.vednok',
                 responsiveUl: [
                     'bg-red',
-                    'md:bg-transparent',
+                    'lg:bg-transparent',
                     'justify-start',
-                    'md:justify-end',
+                    'lg:justify-end',
                     'items-center',
                     'pin-t',
                     'absolute',
-                    'md:relative',
+                    'lg:relative',
                     'h-screen',
-                    'md:h-auto',
-                    'md:w-full',
+                    'lg:h-auto',
+                    'lg:w-full',
                     'fixed',
                 ],
                 list: {
-                    'Országfutás': 'orszagfutas',
-                    'Védnök': '.vednok',
-                    'Támogatók': '.sponsor',
-                    'Kapcsolat': '.contact',
+                    'Országfutás': '#orszagfutas',
+                    'Védnök': '#vednok',
+                    'Motiváció' : '#motivation',
+                    'Támogatók': '#sponsor',
+                    'Kapcsolat': '#contact',
                 },
             }
         }
@@ -41,11 +41,11 @@
 </script>
 
 <style lang="sass" scoped>
-    $mobile: "only screen and (max-width : 767px)"
+    $mobile: "(max-width : 992px)"
 
     ul.activeleft
         left: 0
-    @media #{$mobile}
+    @media (max-width: 993px)
         ul
             left: -100%
             transition: left .5s

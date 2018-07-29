@@ -3,12 +3,17 @@ import App from './App.vue'
 import './registerServiceWorker'
 import styles from './assets/scss/app.scss'
 import VueAnalytics from 'vue-analytics'
-import VueScrollTo from 'vue-scroll-to'
+import VModal from 'vue-js-modal'
+import VueCarousel from 'vue-carousel';
+import VueLazyload from 'vue-lazyload'
 
 
-Vue.use(VueScrollTo)
+
+Vue.use(VueLazyload)
+Vue.use(VueCarousel)
+Vue.use(VModal)
 Vue.use(VueAnalytics, {
-    id: ['UA-XXX-X', '']
+    id: 'UA-114025874-4'
 })
 
 import {library} from '@fortawesome/fontawesome-svg-core'

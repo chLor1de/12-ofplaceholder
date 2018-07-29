@@ -1,5 +1,5 @@
 <template>
-        <img class="container hidden md:block mx-auto" src="@/assets/infograpf_OF.png" alt="">
+        <img class="container hidden md:block mx-auto" src="@/assets/infograph.png" alt="">
 </template>
 
 <script>
